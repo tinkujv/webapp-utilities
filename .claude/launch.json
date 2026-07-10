@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "dev",
+      "runtimeExecutable": "cmd.exe",
+      "runtimeArgs": ["/c", "D:\\claude\\project 1\\.claude\\dev-wrapper.cmd"],
+      "port": 5173
+    }
+  ]
+}

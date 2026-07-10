@@ -1,0 +1,80 @@
+.app-shell {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  text-align: left;
+}
+
+.app-nav {
+  width: 220px;
+  flex-shrink: 0;
+  border-right: 1px solid var(--border);
+  padding: 24px 16px;
+  box-sizing: border-box;
+
+  @media (max-width: 700px) {
+    display: none;
+  }
+}
+
+.app-nav-title {
+  font-family: var(--heading);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-h);
+  margin-bottom: 20px;
+}
+
+.app-nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.app-nav-button {
+  font: inherit;
+  width: 100%;
+  text-align: left;
+  padding: 8px 10px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.app-nav-button:hover {
+  background: var(--code-bg);
+  color: var(--text-h);
+}
+
+.app-nav-button.active {
+  background: var(--accent-bg);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.app-main {
+  flex: 1;
+  min-width: 0;
+  padding: 32px 40px;
+  box-sizing: border-box;
+
+  @media (max-width: 1024px) {
+    padding: 24px 20px;
+  }
+}
+
+.app-main h1 {
+  margin: 0 0 4px;
+  text-align: left;
+  font-size: 32px;
+}
+
+.app-tagline {
+  color: var(--text);
+  margin-bottom: 24px;
+}
