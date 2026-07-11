@@ -70,6 +70,7 @@ h2 {
 
 h1 {
   font-size: 56px;
+  line-height: 1.2;
   letter-spacing: -1.68px;
   margin: 32px 0;
   background: linear-gradient(120deg, var(--text-h), var(--accent));
