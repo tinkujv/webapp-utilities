@@ -14,7 +14,7 @@
   padding: 4px;
   background: var(--code-bg);
   border: 1px solid var(--border);
-  border-radius: 12px;
+  border-radius: 14px;
 
   @media (max-width: 1024px) {
     margin: 24px 20px 0;
@@ -27,10 +27,15 @@
   font-weight: 600;
   padding: 8px 18px;
   border: none;
-  border-radius: 9px;
+  border-radius: 10px;
   background: transparent;
   color: var(--text);
   cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tool-toggle-icon {
+  margin-right: 6px;
 }
 
 .tool-toggle-button:hover {
@@ -38,7 +43,7 @@
 }
 
 .tool-toggle-button.active {
-  background: var(--bg);
+  background: linear-gradient(135deg, var(--bg), var(--accent-bg));
   color: var(--accent);
   box-shadow: var(--shadow);
 }
@@ -48,6 +53,7 @@
   min-width: 0;
   padding: 32px 40px;
   box-sizing: border-box;
+  animation: fade-in 0.25s ease;
 
   @media (max-width: 1024px) {
     padding: 24px 20px;
@@ -63,4 +69,15 @@
 .app-tagline {
   color: var(--text);
   margin-bottom: 24px;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

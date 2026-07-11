@@ -19,12 +19,13 @@ function App() {
             className={tool.id === activeToolId ? 'tool-toggle-button active' : 'tool-toggle-button'}
             onClick={() => setActiveToolId(tool.id)}
           >
+            <span className="tool-toggle-icon" aria-hidden="true">{tool.icon}</span>
             {tool.name}
           </button>
         ))}
       </div>
 
-      <main className="app-main">
+      <main className="app-main" key={activeTool.id}>
         <h1>{activeTool.name}</h1>
         <p className="app-tagline">{activeTool.tagline}</p>
         <ActiveComponent />

@@ -7,6 +7,7 @@ export const tools = [
   {
     id: 'cron',
     name: 'Cron Expression',
+    icon: '⏰',
     tagline: 'Paste a cron schedule and see what it actually means',
     Component: CronExplainer,
   },

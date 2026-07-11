@@ -2,7 +2,7 @@
   text-align: left;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 18px;
 }
 
 .cron-input-label {
@@ -14,18 +14,20 @@
 .cron-input {
   font-family: var(--mono);
   font-size: 20px;
-  padding: 12px 14px;
+  padding: 14px 16px;
   border: 1px solid var(--border);
-  border-radius: 8px;
+  border-radius: 12px;
   background: var(--code-bg);
   color: var(--text-h);
   width: 100%;
   box-sizing: border-box;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .cron-input:focus {
   outline: none;
   border-color: var(--accent-border);
+  box-shadow: 0 0 0 4px var(--accent-bg);
 }
 
 .cron-presets {
@@ -37,26 +39,34 @@
 .cron-preset-button {
   font: inherit;
   font-size: 13px;
-  padding: 6px 10px;
+  padding: 6px 12px;
   border: 1px solid var(--border);
   border-radius: 999px;
-  background: transparent;
+  background: var(--bg);
   color: var(--text);
   cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease, transform 0.1s ease;
 }
 
 .cron-preset-button:hover {
   border-color: var(--accent-border);
-  color: var(--text-h);
+  color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.cron-section-icon {
+  margin-right: 8px;
 }
 
 .cron-explanation {
   font-size: 20px;
   color: var(--text-h);
-  padding: 14px 16px;
-  background: var(--accent-bg);
+  padding: 18px 20px;
+  background: linear-gradient(135deg, var(--accent-bg), var(--bg));
   border: 1px solid var(--accent-border);
-  border-radius: 8px;
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  animation: cron-fade-in 0.3s ease;
 }
 
 .cron-error {
@@ -65,38 +75,58 @@
   padding: 14px 16px;
   background: var(--error-bg);
   border: 1px solid var(--error-border);
-  border-radius: 8px;
+  border-radius: 12px;
 }
 
 .cron-breakdown {
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0;
   font-size: 14px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  animation: cron-fade-in 0.3s ease;
 }
 
 .cron-breakdown th,
 .cron-breakdown td {
-  border: 1px solid var(--border);
-  padding: 8px 10px;
+  border-bottom: 1px solid var(--border);
+  padding: 10px 12px;
   text-align: left;
   vertical-align: top;
+}
+
+.cron-breakdown tr:last-child td {
+  border-bottom: none;
 }
 
 .cron-breakdown th {
   color: var(--text-h);
   background: var(--code-bg);
   font-weight: 600;
+  border-bottom: 1px solid var(--border);
 }
 
 .cron-breakdown-meaning td {
   color: var(--text);
 }
 
+.cron-next-runs {
+  padding: 16px 20px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--bg);
+  animation: cron-fade-in 0.3s ease;
+}
+
 .cron-next-runs h3 {
+  display: flex;
+  align-items: center;
   font-size: 15px;
   font-weight: 600;
   color: var(--text-h);
-  margin: 0 0 8px;
+  margin: 0 0 10px;
 }
 
 .cron-next-runs ol {
@@ -109,4 +139,15 @@
 
 .cron-next-runs li {
   padding: 2px 0;
+}
+
+@keyframes cron-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

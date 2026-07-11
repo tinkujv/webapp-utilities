@@ -68,13 +68,14 @@ export default function CronExplainer() {
       {!parsed.valid ? (
         <div className="cron-error">Can't parse this expression: {parsed.error}</div>
       ) : (
-        <div className="cron-explanation">
+        <div className="cron-explanation" key={expression}>
+          <span className="cron-section-icon" aria-hidden="true">✨</span>
           {parsed.explanation ?? 'Valid schedule, but no plain-English description is available for it.'}
         </div>
       )}
 
       {parsed.valid && fieldKeys && (
-        <table className="cron-breakdown">
+        <table className="cron-breakdown" key={`${expression}-table`}>
           <thead>
             <tr>
               {fieldKeys.map((key) => (
@@ -98,8 +99,8 @@ export default function CronExplainer() {
       )}
 
       {parsed.valid && (
-        <div className="cron-next-runs">
-          <h3>Next 5 runs</h3>
+        <div className="cron-next-runs" key={`${expression}-runs`}>
+          <h3><span className="cron-section-icon" aria-hidden="true">⏭️</span>Next 5 runs</h3>
           <ol>
             {parsed.nextRuns.map((date, i) => (
               <li key={i}>{date.toLocaleString()}</li>
