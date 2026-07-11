@@ -12,9 +12,11 @@ const PRESETS = [
   { label: 'Broken JSON', value: '{\n  "name": "Ada",\n  "born": 1815,\n}' },
 ]
 
+const MAX_LENGTH = 50000
+
 const KIND_LABEL = {
-  object: (total) => `object with ${total} key${total === 1 ? '' : 's'}`,
-  array: (total) => `array with ${total} item${total === 1 ? '' : 's'}`,
+  object: (total) => `object with ${total} top-level key${total === 1 ? '' : 's'}`,
+  array: (total) => `array with ${total} top-level item${total === 1 ? '' : 's'}`,
 }
 
 export default function JsonExplainer() {
@@ -53,6 +55,7 @@ export default function JsonExplainer() {
         id="json-input"
         className="json-input"
         spellCheck={false}
+        maxLength={MAX_LENGTH}
         rows={10}
         value={input}
         onChange={(e) => {
@@ -60,6 +63,9 @@ export default function JsonExplainer() {
           setCopied(false)
         }}
       />
+      <div className={input.length >= MAX_LENGTH * 0.9 ? 'char-count is-near-limit' : 'char-count'}>
+        {input.length.toLocaleString()} / {MAX_LENGTH.toLocaleString()}
+      </div>
 
       <div className="json-presets">
         {PRESETS.map((preset) => (

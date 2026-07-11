@@ -36,6 +36,7 @@ export default function TimestampExplainer() {
         id="ts-input"
         className="ts-input"
         type="text"
+        maxLength={200}
         spellCheck={false}
         value={input}
         onChange={(e) => setInput(e.target.value)}

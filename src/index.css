@@ -13,6 +13,17 @@
   --shadow: rgba(138, 99, 210, 0.12) 0 10px 15px -3px, rgba(138, 99, 210, 0.08) 0 4px 6px -2px;
   --page-gradient: linear-gradient(135deg, #ffe8f2 0%, #eee3fc 45%, #e0edfd 100%);
 
+  /* Tokenizer chip colors live here (not scoped to that tool's CSS) so the
+     dark-mode override below can swap them along with everything else. */
+  --tok-1: #ffe3ec;
+  --tok-2: #e3f2ff;
+  --tok-3: #e8f9ec;
+  --tok-4: #fff3d6;
+  --tok-5: #ede3ff;
+  --tok-6: #ffe8d9;
+  --tok-7: #e0f7fa;
+  --tok-8: #fce4ff;
+
   --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
   --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
   --mono: ui-monospace, Consolas, monospace;
@@ -26,10 +37,38 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: color 0.3s ease, background 0.3s ease;
 
   @media (max-width: 1024px) {
     font-size: 16px;
   }
+}
+
+:root[data-theme='dark'] {
+  --text: #b3a8cc;
+  --text-h: #f3edfd;
+  --bg: #1a1625;
+  --border: #362f4a;
+  --code-bg: #241f33;
+  --accent: #b794f6;
+  --accent-bg: #322a4a;
+  --accent-border: #6a5490;
+  --error: #f0a8c4;
+  --error-bg: #3a2230;
+  --error-border: #6e3550;
+  --shadow: rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.3) 0 4px 6px -2px;
+  --page-gradient: linear-gradient(135deg, #1d1030 0%, #201a3a 45%, #12192e 100%);
+
+  --tok-1: #45283a;
+  --tok-2: #203247;
+  --tok-3: #223c2c;
+  --tok-4: #453a24;
+  --tok-5: #332a4d;
+  --tok-6: #44301f;
+  --tok-7: #1e3a3d;
+  --tok-8: #3c2842;
+
+  color-scheme: dark;
 }
 
 body {
@@ -104,4 +143,18 @@ code {
   line-height: 135%;
   padding: 4px 8px;
   background: var(--code-bg);
+}
+
+/* Shared by every tool's char-limited input/textarea, so it only needs to
+   be defined once rather than per tool's own CSS file. */
+.char-count {
+  font-size: 12px;
+  color: var(--text);
+  text-align: right;
+  margin: -10px 0 0;
+}
+
+.char-count.is-near-limit {
+  color: var(--error);
+  font-weight: 600;
 }

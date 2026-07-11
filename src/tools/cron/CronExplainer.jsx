@@ -47,6 +47,7 @@ export default function CronExplainer() {
         id="cron-input"
         className="cron-input"
         type="text"
+        maxLength={200}
         spellCheck={false}
         value={expression}
         onChange={(e) => setExpression(e.target.value)}

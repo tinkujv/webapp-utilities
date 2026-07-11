@@ -28,6 +28,7 @@ const PRESETS = [
 ]
 
 const STATUS_ICON = { active: '✅', expired: '⛔', none: 'ℹ️' }
+const MAX_LENGTH = 20000
 
 export default function JwtExplainer() {
   const [token, setToken] = useState(PRESETS[1].value)
@@ -52,6 +53,7 @@ export default function JwtExplainer() {
         id="jwt-input"
         className="jwt-input"
         spellCheck={false}
+        maxLength={MAX_LENGTH}
         rows={4}
         value={token}
         onChange={(e) => {
@@ -59,6 +61,9 @@ export default function JwtExplainer() {
           setCopied(false)
         }}
       />
+      <div className={token.length >= MAX_LENGTH * 0.9 ? 'char-count is-near-limit' : 'char-count'}>
+        {token.length.toLocaleString()} / {MAX_LENGTH.toLocaleString()}
+      </div>
 
       <div className="jwt-presets">
         {PRESETS.map((preset) => (

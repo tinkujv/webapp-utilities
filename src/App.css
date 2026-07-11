@@ -6,16 +6,23 @@
   text-align: left;
 }
 
-.tool-toggle {
-  display: inline-flex;
+.app-topbar {
+  display: flex;
   flex-wrap: wrap;
-  gap: 6px;
-  align-self: flex-start;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
   margin: 32px 40px 0;
 
   @media (max-width: 1024px) {
     margin: 24px 20px 0;
   }
+}
+
+.tool-toggle {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 6px;
 }
 
 .tool-toggle-button {
