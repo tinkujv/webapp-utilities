@@ -5,7 +5,8 @@
       "name": "dev",
       "runtimeExecutable": "cmd.exe",
       "runtimeArgs": ["/c", "D:\\claude\\project 1\\.claude\\dev-wrapper.cmd"],
-      "port": 5173
+      "port": 5173,
+      "autoPort": true
     }
   ]
 }

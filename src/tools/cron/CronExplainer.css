@@ -61,10 +61,10 @@
 
 .cron-error {
   font-size: 15px;
-  color: #c0392b;
+  color: var(--error);
   padding: 14px 16px;
-  background: rgba(192, 57, 43, 0.08);
-  border: 1px solid rgba(192, 57, 43, 0.4);
+  background: var(--error-bg);
+  border: 1px solid var(--error-border);
   border-radius: 8px;
 }
 
