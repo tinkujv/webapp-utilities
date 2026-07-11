@@ -12,6 +12,7 @@
   "dependencies": {
     "cron-parser": "^5.6.1",
     "cronstrue": "^3.24.0",
+    "gpt-tokenizer": "^3.4.0",
     "react": "^19.2.7",
     "react-dom": "^19.2.7"
   },

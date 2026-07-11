@@ -2,6 +2,8 @@ import CronExplainer from './cron/CronExplainer.jsx'
 import JsonExplainer from './json/JsonExplainer.jsx'
 import JwtExplainer from './jwt/JwtExplainer.jsx'
 import TimestampExplainer from './timestamp/TimestampExplainer.jsx'
+import TokenizerExplainer from './tokenizer/TokenizerExplainer.jsx'
+import UrlExplainer from './url/UrlExplainer.jsx'
 
 // Each entry is a self-contained tool: a nav label plus the component that
 // renders it. Adding YAML later means adding a folder under src/tools and
@@ -34,5 +36,19 @@ export const tools = [
     icon: '🕒',
     tagline: 'Convert Unix timestamps and dates, either direction',
     Component: TimestampExplainer,
+  },
+  {
+    id: 'tokenizer',
+    name: 'Tokenizer',
+    icon: '🧩',
+    tagline: 'See how AI models actually split your text into tokens',
+    Component: TokenizerExplainer,
+  },
+  {
+    id: 'url',
+    name: 'URL',
+    icon: '🔗',
+    tagline: 'Break a URL into its parts and encode or decode text',
+    Component: UrlExplainer,
   },
 ]
