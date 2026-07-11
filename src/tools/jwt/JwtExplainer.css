@@ -1,0 +1,196 @@
+.jwt-explainer {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.jwt-input-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.jwt-input {
+  font-family: var(--mono);
+  font-size: 14px;
+  line-height: 1.5;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--code-bg);
+  color: var(--text-h);
+  width: 100%;
+  box-sizing: border-box;
+  resize: vertical;
+  word-break: break-all;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.jwt-input:focus {
+  outline: none;
+  border-color: var(--accent-border);
+  box-shadow: 0 0 0 4px var(--accent-bg);
+}
+
+.jwt-presets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.jwt-preset-button {
+  font: inherit;
+  font-size: 13px;
+  padding: 6px 12px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--bg);
+  color: var(--text);
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease, transform 0.1s ease;
+}
+
+.jwt-preset-button:hover {
+  border-color: var(--accent-border);
+  color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.jwt-privacy-note {
+  font-size: 13px;
+  color: var(--text);
+  margin: -8px 0 0;
+}
+
+.jwt-section-icon {
+  margin-right: 8px;
+}
+
+.jwt-error {
+  font-size: 15px;
+  color: var(--error);
+  padding: 14px 16px;
+  background: var(--error-bg);
+  border: 1px solid var(--error-border);
+  border-radius: 12px;
+}
+
+.jwt-expiry-banner {
+  font-size: 16px;
+  color: var(--text-h);
+  padding: 14px 16px;
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  animation: jwt-fade-in 0.3s ease;
+}
+
+.jwt-expiry-active,
+.jwt-expiry-none {
+  background: linear-gradient(135deg, var(--accent-bg), var(--bg));
+  border: 1px solid var(--accent-border);
+}
+
+.jwt-expiry-expired {
+  background: linear-gradient(135deg, var(--error-bg), var(--bg));
+  border: 1px solid var(--error-border);
+  color: var(--error);
+}
+
+.jwt-breakdown {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 14px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  animation: jwt-fade-in 0.3s ease;
+}
+
+.jwt-breakdown th,
+.jwt-breakdown td {
+  border-bottom: 1px solid var(--border);
+  padding: 10px 12px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.jwt-breakdown tr:last-child td {
+  border-bottom: none;
+}
+
+.jwt-breakdown th {
+  color: var(--text-h);
+  background: var(--code-bg);
+  font-weight: 600;
+}
+
+.jwt-output-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.jwt-output-header h3 {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-h);
+  margin: 0;
+}
+
+.jwt-copy-button {
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border: 1px solid var(--accent-border);
+  border-radius: 999px;
+  background: var(--accent-bg);
+  color: var(--accent);
+  cursor: pointer;
+}
+
+.jwt-copy-button:hover {
+  box-shadow: var(--shadow);
+}
+
+.jwt-signature-note {
+  font-size: 13px;
+  color: var(--text);
+  margin: -12px 0 0;
+}
+
+.jwt-output {
+  margin: 0;
+  padding: 16px 18px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--code-bg);
+  overflow-x: auto;
+  animation: jwt-fade-in 0.3s ease;
+}
+
+.jwt-output code {
+  display: block;
+  background: none;
+  padding: 0;
+  border-radius: 0;
+  white-space: pre-wrap;
+  word-break: break-all;
+  font-family: var(--mono);
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-h);
+}
+
+@keyframes jwt-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
