@@ -1,6 +1,7 @@
 import CronExplainer from './cron/CronExplainer.jsx'
 import JsonExplainer from './json/JsonExplainer.jsx'
 import JwtExplainer from './jwt/JwtExplainer.jsx'
+import TimestampExplainer from './timestamp/TimestampExplainer.jsx'
 
 // Each entry is a self-contained tool: a nav label plus the component that
 // renders it. Adding YAML later means adding a folder under src/tools and
@@ -26,5 +27,12 @@ export const tools = [
     icon: '🔑',
     tagline: 'Decode a token and see what it claims and when it expires',
     Component: JwtExplainer,
+  },
+  {
+    id: 'timestamp',
+    name: 'Timestamp',
+    icon: '🕒',
+    tagline: 'Convert Unix timestamps and dates, either direction',
+    Component: TimestampExplainer,
   },
 ]

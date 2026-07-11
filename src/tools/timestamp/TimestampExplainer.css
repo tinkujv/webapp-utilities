@@ -1,0 +1,149 @@
+.ts-explainer {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.ts-live-clock {
+  align-self: flex-start;
+  font-size: 14px;
+  color: var(--text);
+  padding: 8px 14px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--code-bg);
+}
+
+.ts-live-clock code {
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.ts-input-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.ts-input {
+  font-family: var(--mono);
+  font-size: 18px;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--code-bg);
+  color: var(--text-h);
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ts-input:focus {
+  outline: none;
+  border-color: var(--accent-border);
+  box-shadow: 0 0 0 4px var(--accent-bg);
+}
+
+.ts-hint {
+  font-size: 13px;
+  color: var(--text);
+  margin: -12px 0 0;
+}
+
+.ts-presets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.ts-preset-button {
+  font: inherit;
+  font-size: 13px;
+  padding: 6px 12px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--bg);
+  color: var(--text);
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease, transform 0.1s ease;
+}
+
+.ts-preset-button:hover {
+  border-color: var(--accent-border);
+  color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.ts-section-icon {
+  margin-right: 8px;
+}
+
+.ts-error {
+  font-size: 15px;
+  color: var(--error);
+  padding: 14px 16px;
+  background: var(--error-bg);
+  border: 1px solid var(--error-border);
+  border-radius: 12px;
+}
+
+.ts-relative-banner {
+  font-size: 18px;
+  color: var(--text-h);
+  padding: 16px 18px;
+  background: linear-gradient(135deg, var(--accent-bg), var(--bg));
+  border: 1px solid var(--accent-border);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  animation: ts-fade-in 0.3s ease;
+}
+
+.ts-detected-as {
+  font-size: 13px;
+  color: var(--text);
+  font-weight: 400;
+}
+
+.ts-breakdown {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 14px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  animation: ts-fade-in 0.3s ease;
+}
+
+.ts-breakdown td {
+  border-bottom: 1px solid var(--border);
+  padding: 10px 12px;
+  vertical-align: top;
+}
+
+.ts-breakdown tr:last-child td {
+  border-bottom: none;
+}
+
+.ts-breakdown tr td:first-child {
+  color: var(--text);
+  font-weight: 600;
+  background: var(--code-bg);
+  width: 180px;
+}
+
+.ts-breakdown tr td:last-child code {
+  color: var(--text-h);
+}
+
+@keyframes ts-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
