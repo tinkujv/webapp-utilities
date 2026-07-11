@@ -8,13 +8,10 @@
 
 .tool-toggle {
   display: inline-flex;
-  gap: 4px;
+  flex-wrap: wrap;
+  gap: 6px;
   align-self: flex-start;
   margin: 32px 40px 0;
-  padding: 4px;
-  background: var(--code-bg);
-  border: 1px solid var(--border);
-  border-radius: 14px;
 
   @media (max-width: 1024px) {
     margin: 24px 20px 0;
@@ -25,13 +22,14 @@
   font: inherit;
   font-size: 14px;
   font-weight: 600;
-  padding: 8px 18px;
-  border: none;
+  padding: 10px 22px;
+  border: 1.5px solid var(--border);
   border-radius: 10px;
-  background: transparent;
+  background: var(--bg);
   color: var(--text);
   cursor: pointer;
-  transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+  white-space: nowrap;
+  transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .tool-toggle-icon {
@@ -39,12 +37,14 @@
 }
 
 .tool-toggle-button:hover {
-  color: var(--text-h);
+  color: var(--accent);
+  border-color: var(--accent-border);
 }
 
 .tool-toggle-button.active {
-  background: linear-gradient(135deg, var(--bg), var(--accent-bg));
-  color: var(--accent);
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
   box-shadow: var(--shadow);
 }
 

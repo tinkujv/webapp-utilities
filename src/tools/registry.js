@@ -1,14 +1,22 @@
 import CronExplainer from './cron/CronExplainer.jsx'
+import JsonExplainer from './json/JsonExplainer.jsx'
 
 // Each entry is a self-contained tool: a nav label plus the component that
-// renders it. Adding YAML/JSON later means adding a folder under src/tools
-// and one line here — nothing else in the app needs to change.
+// renders it. Adding YAML later means adding a folder under src/tools and
+// one line here — nothing else in the app needs to change.
 export const tools = [
   {
     id: 'cron',
-    name: 'Cron Expression',
+    name: 'Cron',
     icon: '⏰',
     tagline: 'Paste a cron schedule and see what it actually means',
     Component: CronExplainer,
+  },
+  {
+    id: 'json',
+    name: 'JSON',
+    icon: '{}',
+    tagline: 'Validate, format, and get a quick read on any JSON payload',
+    Component: JsonExplainer,
   },
 ]

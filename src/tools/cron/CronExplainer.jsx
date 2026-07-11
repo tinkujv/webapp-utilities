@@ -69,7 +69,7 @@ export default function CronExplainer() {
         <div className="cron-error">Can't parse this expression: {parsed.error}</div>
       ) : (
         <div className="cron-explanation" key={expression}>
-          <span className="cron-section-icon" aria-hidden="true">✨</span>
+          <span className="cron-section-icon" aria-hidden="true">⏳</span>
           {parsed.explanation ?? 'Valid schedule, but no plain-English description is available for it.'}
         </div>
       )}
